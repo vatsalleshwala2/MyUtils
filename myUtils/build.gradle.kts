@@ -1,6 +1,9 @@
+import org.gradle.api.publish.maven.internal.publisher.MavenPublisher
+
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("maven-publish")
 }
 
 android {
@@ -31,6 +34,29 @@ android {
         jvmTarget = "1.8"
     }
 }
+//publishing {
+//    publications {
+//        create<MavenPublication>("bar") {
+//            groupId = "com"
+//            artifactId = "myutils"
+//            version = "1.0"
+//            artifact(file("$buildDir/outputs/aar/myUtils-release.aar"))
+//        }
+//    }
+//
+//    repositories {
+//        maven {
+//            name = "GithubPackages"
+//            url = uri("https://maven.pkg.github.com/vatsalleshwala2/MyUtils")
+//            credentials {
+//                username = System.getenv("GITHUB_USER")
+//                password = System.getenv("GITHUB_TOKEN")
+//            }
+//        }
+//    }
+//
+//}
+
 
 dependencies {
 
@@ -46,4 +72,20 @@ dependencies {
     //size
     implementation ("com.intuit.ssp:ssp-android:1.1.0")
     implementation ("com.intuit.sdp:sdp-android:1.1.0")
+}
+
+
+
+publishing {
+    publications {
+        register<MavenPublication> ("release") {
+            groupId = "com.github.vatsalleshwala2"
+            artifactId = "MyUtils"
+            version = "1.0"
+
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
+    }
 }

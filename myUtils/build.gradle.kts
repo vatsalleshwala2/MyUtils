@@ -34,29 +34,6 @@ android {
         jvmTarget = "1.8"
     }
 }
-//publishing {
-//    publications {
-//        create<MavenPublication>("bar") {
-//            groupId = "com"
-//            artifactId = "myutils"
-//            version = "1.0"
-//            artifact(file("$buildDir/outputs/aar/myUtils-release.aar"))
-//        }
-//    }
-//
-//    repositories {
-//        maven {
-//            name = "GithubPackages"
-//            url = uri("https://maven.pkg.github.com/vatsalleshwala2/MyUtils")
-//            credentials {
-//                username = System.getenv("GITHUB_USER")
-//                password = System.getenv("GITHUB_TOKEN")
-//            }
-//        }
-//    }
-//
-//}
-
 
 dependencies {
 

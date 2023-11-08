@@ -1,15 +1,18 @@
 package com.reelmaker.myutils;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.myutils.ToastUtils;
 import com.myutils.dialog.SpotsDialog;
 
 public class MainActivity extends AppCompatActivity{
     private static AlertDialog alertDialog;
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,5 +30,9 @@ public class MainActivity extends AppCompatActivity{
             alertDialog.show();
 
         });
+        findViewById(R.id.button1).setOnClickListener(v -> ToastUtils.showToastSuccess("Success"));
+        findViewById(R.id.button2).setOnClickListener(v -> ToastUtils.showToastError("Error"));
+        findViewById(R.id.button3).setOnClickListener(v -> ToastUtils.showToastInfo("Info"));
+        findViewById(R.id.button4).setOnClickListener(v -> ToastUtils.showToastWarning("Warning"));
     }
 }

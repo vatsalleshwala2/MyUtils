@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 
 import com.myutils.ActivityAndContextSet;
 import com.myutils.DialogUtils;
+import com.myutils.ToastUtils;
 
 public class MyApplication extends Application {
     @Override
@@ -17,6 +18,7 @@ public class MyApplication extends Application {
         super.onCreate();
 
         ActivityAndContextSet.setContext(getApplicationContext());
+        ToastUtils.getInstance().initialize();
         DialogUtils.dialogUtilsParamsSet(5,
                 Color.parseColor("#00ff00"),
                 Color.parseColor("#FF0000"),

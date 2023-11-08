@@ -11,6 +11,30 @@
         android:layout_height="wrap_content"
         android:text="My"/>
 
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Toast Success"/>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Toast Error"/>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Toast Info"/>
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Toast Warning"/>
+
 <!--    <Button-->
 <!--        android:id="@android:id/button1"-->
 <!--        android:layout_width="wrap_content"-->

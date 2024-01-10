@@ -11,7 +11,11 @@ import android.graphics.drawable.shapes.OvalShape;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+
+import androidx.appcompat.widget.LinearLayoutCompat;
 
 import com.google.android.material.textview.MaterialTextView;
 import com.myutils.R;
@@ -30,6 +34,7 @@ public class SpotsDialog extends AlertDialog {
         private int messageTextSize = 16;
         private int dotsCount = 5;
         private int dotsColor = Color.parseColor("#FF0000");
+        private int bgColor = Color.WHITE;
         private boolean cancelable = true;
         private OnCancelListener cancelListener;
 
@@ -45,6 +50,11 @@ public class SpotsDialog extends AlertDialog {
 
         public Builder setDotsColor(int dotsColor) {
             this.dotsColor = dotsColor;
+            return this;
+        }
+
+        public Builder setBgColor(int bgColor) {
+            this.bgColor = bgColor;
             return this;
         }
 
@@ -87,7 +97,8 @@ public class SpotsDialog extends AlertDialog {
                     cancelable,
                     cancelListener,
                     dotsCount,
-                    dotsColor
+                    dotsColor,
+                    bgColor
             );
         }
     }
@@ -99,6 +110,7 @@ public class SpotsDialog extends AlertDialog {
     private final int dotsCount;
     private final int dotsColor;
     private final int messageColor;
+    private final int bgColor;
     private int messageTextSize;
     private AnimatedView[] spots;
     private AnimatorPlayer animator;
@@ -111,7 +123,8 @@ public class SpotsDialog extends AlertDialog {
                         boolean cancelable,
                         OnCancelListener cancelListener,
                         int dotsCount,
-                        int dotsColor
+                        int dotsColor,
+                        int bgColor
     ) {
         super(context);
         this.message = message;
@@ -119,6 +132,7 @@ public class SpotsDialog extends AlertDialog {
         this.messageTextSize = messageTextSize;
         this.dotsCount = dotsCount;
         this.dotsColor = dotsColor;
+        this.bgColor = bgColor;
 
         setCancelable(cancelable);
         if (cancelListener != null) setOnCancelListener(cancelListener);
@@ -190,6 +204,11 @@ public class SpotsDialog extends AlertDialog {
             progress.addView(v, size, size);
             spots[i] = v;
         }
+
+        ViewGroup containingLayout = (ViewGroup) progress.getParent();
+        containingLayout.setBackgroundColor(bgColor);
+//        LinearLayoutCompat linearLayoutCompat = (LinearLayoutCompat) containingLayout.getParent();
+//        linearLayoutCompat.setBackgroundColor(bgColor);
     }
 
     private Animator[] createAnimations() {

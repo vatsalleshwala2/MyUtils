@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity{
                     .setDotsColor(Color.parseColor("#00ff00"))
                     .setMessageColor(Color.parseColor("#FF0000"))
                     .setMessageTextSize(16)
+                    .setBgColor(Color.CYAN)
                     .build();
             alertDialog.show();
 

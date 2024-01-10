@@ -122,7 +122,7 @@ public class SpotsDialog extends AlertDialog {
                         int dotsColor,
                         int bgColor
     ) {
-        super(context);
+        super(context, R.style.SpotsDialogDefault);
         this.message = message;
         this.messageColor = messageColor;
         this.messageTextSize = messageTextSize;

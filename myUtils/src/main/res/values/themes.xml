@@ -8,5 +8,5 @@
     <style name="Theme.MyUtils" parent="Base.Theme.MyUtils" />
 
 <!--    <style name="SpotsDialogDefault" parent="android:Theme.DeviceDefault.Light.Dialog"/>-->
-    <style name="SpotsDialogDefault" parent="Theme.Material3.Dark.Dialog"/>
+    <style name="SpotsDialogDefault" parent="Theme.Material3.Light.Dialog"/>
 </resources>

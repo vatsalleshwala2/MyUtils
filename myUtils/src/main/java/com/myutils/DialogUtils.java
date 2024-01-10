@@ -15,11 +15,13 @@ public class DialogUtils {
     private static int dotsColor;
     private static int messageColor;
     private static int messageTextSize;
+    private static int bgColor;
     private static boolean cancelable;
     public static void dialogUtilsParamsSet(int dotsCount1,
                        int dotsColor1,
                        int messageColor1,
                        int messageTextSize1,
+                       int bgColor1,
                        boolean cancelable1
                        ) {
         dotsCount = dotsCount1;
@@ -27,6 +29,7 @@ public class DialogUtils {
         messageColor = messageColor1;
         messageTextSize = messageTextSize1;
         cancelable = cancelable1;
+        bgColor = bgColor1;
     }
 
     public static void showDialog(String message) {
@@ -37,6 +40,7 @@ public class DialogUtils {
                 .setMessageColor(messageColor)
                 .setMessageTextSize(messageTextSize)
                 .setCancelable(cancelable)
+                .setBgColor(bgColor)
                 .build();
         alertDialog.setMessage(message);
         alertDialog.show();
@@ -50,6 +54,7 @@ public class DialogUtils {
                 .setMessageColor(messageColor)
                 .setMessageTextSize(messageTextSize)
                 .setCancelable(cancelable)
+                .setBgColor(bgColor)
                 .setMessage("Please Wait..")
                 .build();
         alertDialog.show();

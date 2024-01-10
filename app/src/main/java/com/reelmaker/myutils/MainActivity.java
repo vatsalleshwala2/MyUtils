@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.myutils.DialogUtils;
 import com.myutils.ToastUtils;
 import com.myutils.dialog.SpotsDialog;
 
@@ -18,17 +19,17 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         findViewById(R.id.button0).setOnClickListener(v -> {
-//            DialogUtils.showDialogPleaseWait();
+            DialogUtils.showDialogPleaseWait();
 
-            alertDialog = new SpotsDialog.Builder()
-                    .setContext(this)
-                    .setDotsCount(7)
-                    .setDotsColor(Color.parseColor("#00ff00"))
-                    .setMessageColor(Color.parseColor("#FF0000"))
-                    .setMessageTextSize(16)
-                    .setBgColor(Color.CYAN)
-                    .build();
-            alertDialog.show();
+//            alertDialog = new SpotsDialog.Builder()
+//                    .setContext(this)
+//                    .setDotsCount(7)
+//                    .setDotsColor(Color.parseColor("#00ff00"))
+//                    .setMessageColor(Color.parseColor("#FF0000"))
+//                    .setMessageTextSize(16)
+//                    .setBgColor(Color.CYAN)
+//                    .build();
+//            alertDialog.show();
 
         });
         findViewById(R.id.button1).setOnClickListener(v -> ToastUtils.showToastSuccess("Success"));

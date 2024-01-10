@@ -20,17 +20,13 @@ import androidx.appcompat.widget.LinearLayoutCompat;
 import com.google.android.material.textview.MaterialTextView;
 import com.myutils.R;
 
-/**
- * Created by Maxim Dybarsky | maxim.dybarskyy@gmail.com
- * on 13.01.15 at 14:22
- */
 public class SpotsDialog extends AlertDialog {
 
     public static class Builder {
 
         private Context context;
         private String message;
-        private int messageColor = -1;
+        private int messageColor = Color.parseColor("#808080");
         private int messageTextSize = 16;
         private int dotsCount = 5;
         private int dotsColor = Color.parseColor("#FF0000");
@@ -111,7 +107,7 @@ public class SpotsDialog extends AlertDialog {
     private final int dotsColor;
     private final int messageColor;
     private final int bgColor;
-    private int messageTextSize;
+    private final int messageTextSize;
     private AnimatedView[] spots;
     private AnimatorPlayer animator;
     private CharSequence message;
@@ -179,9 +175,7 @@ public class SpotsDialog extends AlertDialog {
             MaterialTextView lblTitle = findViewById(R.id.lblTitle);
             lblTitle.setText(message);
             lblTitle.setTextSize(TypedValue.COMPLEX_UNIT_SP, messageTextSize);
-            if (messageColor != 0) {
                 lblTitle.setTextColor(messageColor);
-            }
         }
     }
 

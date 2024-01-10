@@ -58,7 +58,7 @@ publishing {
         register<MavenPublication> ("release") {
             groupId = "com.github.vatsalleshwala2"
             artifactId = "MyUtils"
-            version = "1.4"
+            version = "1.4.1"
 
             afterEvaluate {
                 from(components["release"])

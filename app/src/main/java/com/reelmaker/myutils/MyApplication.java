@@ -23,6 +23,7 @@ public class MyApplication extends Application {
                 Color.parseColor("#00ff00"),
                 Color.parseColor("#FF0000"),
                 16,
+                Color.WHITE,
                 false
         );
 

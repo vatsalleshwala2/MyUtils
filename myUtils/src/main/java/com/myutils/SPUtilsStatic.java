@@ -20,14 +20,6 @@ public class SPUtilsStatic {
 
     private static SharedPreferences pref;
     private static SharedPreferences.Editor editor;
-    private static SPUtilsStatic spUtilsStatic;
-
-    public static SPUtilsStatic getInstance() {
-        if (spUtilsStatic == null) {
-            spUtilsStatic = new SPUtilsStatic();
-        }
-        return spUtilsStatic;
-    }
 
     public static void initSessionManager(String name) {
         pref = context.getSharedPreferences(name, 0);

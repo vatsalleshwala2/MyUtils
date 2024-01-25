@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 
 import com.myutils.ActivityAndContextSet;
 import com.myutils.DialogUtils;
+import com.myutils.SPUtilsStatic;
 import com.myutils.ToastUtils;
 
 public class MyApplication extends Application {
@@ -18,6 +19,7 @@ public class MyApplication extends Application {
         super.onCreate();
 
         ActivityAndContextSet.setContext(getApplicationContext());
+        SPUtilsStatic.initSessionManager("My Utils");
         ToastUtils.getInstance().initialize();
         DialogUtils.dialogUtilsParamsSet(5,
                 Color.parseColor("#00ff00"),

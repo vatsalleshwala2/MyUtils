@@ -13,9 +13,6 @@ import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-
-import androidx.appcompat.widget.LinearLayoutCompat;
 
 import com.google.android.material.textview.MaterialTextView;
 import com.myutils.R;
@@ -201,8 +198,6 @@ public class SpotsDialog extends AlertDialog {
 
         ViewGroup containingLayout = (ViewGroup) progress.getParent();
         containingLayout.setBackgroundColor(bgColor);
-//        LinearLayoutCompat linearLayoutCompat = (LinearLayoutCompat) containingLayout.getParent();
-//        linearLayoutCompat.setBackgroundColor(bgColor);
     }
 
     private Animator[] createAnimations() {

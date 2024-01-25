@@ -2,7 +2,7 @@ package com.myutils;
 
 import static com.myutils.ActivityAndContextSet.activity;
 
-public class DensityUtil {
+public class DensityUtils {
 
     public static int dpToPx(float dpValue) {
         final float scale = activity.getResources().getDisplayMetrics().density;

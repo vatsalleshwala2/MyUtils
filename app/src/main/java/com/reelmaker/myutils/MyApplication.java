@@ -26,7 +26,7 @@ public class MyApplication extends Application {
                 Color.parseColor("#FF0000"),
                 16,
                 Color.WHITE,
-                false
+                true
         );
 
         registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {

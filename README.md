@@ -3,6 +3,26 @@
 &#10240; <!-- line space -->
 &#10240; <!-- line space -->
 
+- Dialog
+  |Application class define dialog | Customize dialog |
+  |-------- | ---|
+  | ![dialog1](https://github.com/vatsalleshwala2/MyUtils/assets/114224740/2b2d44d2-b87a-4ba2-8873-9d99afa49632) | ![dialog2](https://github.com/vatsalleshwala2/MyUtils/assets/114224740/13801cea-f120-4b0b-a79f-b67565ff7a8e) |
+
+&#10240; <!-- line space -->
+&#10240; <!-- line space -->
+
+- Toast
+  |Toast Success | Toast Error|
+  |-------- | ---|
+  |![toast_success](https://github.com/vatsalleshwala2/MyUtils/assets/114224740/c2cee76a-3c97-4185-aa2e-0a61362f5848) | ![toast_error](https://github.com/vatsalleshwala2/MyUtils/assets/114224740/88b254b5-d479-4cf3-968c-aa007081439e) |
+
+  |Toast Info | Toast Warning|
+  |-------- | ---|
+  |![toast_info](https://github.com/vatsalleshwala2/MyUtils/assets/114224740/ff03aa5f-c62c-4b40-97ef-6772a9694f3a) | ![toast_warning](https://github.com/vatsalleshwala2/MyUtils/assets/114224740/ffec3bad-b4b7-471d-a4ac-0a45e7fa74bb) |
+  
+&#10240; <!-- line space -->
+&#10240; <!-- line space -->
+
 > Step 1. Add the JitPack repository to your build.gradle(project) file
 ```gradle
 allprojects {

@@ -3,21 +3,36 @@ package com.reelmaker.myutils;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.os.Handler;
 import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.LinearLayoutCompat;
 
 import com.google.android.material.textview.MaterialTextView;
 import com.google.gson.Gson;
+import com.myutils.DeviceTypeChecker;
 import com.myutils.DialogUtils;
 import com.myutils.NetworkUtil;
 import com.myutils.SPUtilsStatic;
+import com.myutils.ScreenShotOfView;
 import com.myutils.ToastUtils;
+import com.myutils.api.APIClient;
+import com.myutils.api.ApiResponse;
+import com.myutils.api.RetrofitClient;
 import com.myutils.dialog.SpotsDialog;
+import com.reelmaker.myutils.model.APIResponseModel;
 import com.reelmaker.myutils.model.Model;
 
+import java.io.IOException;
 import java.util.ArrayList;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Response;
 
 @SuppressLint({"MissingInflatedId", "SetTextI18n"})
 public class MainActivity extends AppCompatActivity{
@@ -29,6 +44,8 @@ public class MainActivity extends AppCompatActivity{
     MaterialTextView materialTextView3;
     MaterialTextView materialTextView4;
     MaterialTextView materialTextView5;
+
+    LinearLayoutCompat llMain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +70,7 @@ public class MainActivity extends AppCompatActivity{
         findViewById(R.id.button4).setOnClickListener(v -> ToastUtils.showToastInfo("Info"));
         findViewById(R.id.button5).setOnClickListener(v -> ToastUtils.showToastWarning("Warning"));
 
+        llMain = findViewById(R.id.llMain);
         materialTextView = findViewById(R.id.materialTextView);
         materialTextView.setText("---> Network Available: " + NetworkUtil.isNetworkAvailable());
         materialTextView1 = findViewById(R.id.materialTextView1);
@@ -104,7 +122,7 @@ public class MainActivity extends AppCompatActivity{
         Log.e(TAG, "get double default Value:###### " + SPUtilsStatic.getDouble("double", 531513.18));*/
 
 
-        Log.e(TAG, "get arrayList Value " + SPUtilsStatic.getArrayList("array_list"));
+        /*Log.e(TAG, "get arrayList Value " + SPUtilsStatic.getArrayList("array_list"));
         Log.e(TAG, "get object Value " + SPUtilsStatic.getObject("object", Model.class));
 
         ArrayList<String> arrayList = new ArrayList<>();
@@ -124,5 +142,71 @@ public class MainActivity extends AppCompatActivity{
         Model model1 = (Model) SPUtilsStatic.getObject("object", Model.class);
         Log.e(TAG, "get arrayList Value:###### " + new Gson().toJson(arrayList2));
         Log.e(TAG, "get object Value:###### " + new Gson().toJson(model1));
+
+        new Handler().postDelayed(() -> {
+            ScreenShotOfView.saveImage(llMain,
+                    false,
+                    Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath(),
+                    "ABCD",
+                    ScreenShotOfView.ImageType.PNG,
+                    new ScreenShotOfView.ImageSaveCallback() {
+                        @Override
+                        public void FilePath(String path, Uri uri) {
+
+                            Log.e(TAG, "ABCD " + path);
+                        }
+
+                        @Override
+                        public void Error(IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+            );
+            ScreenShotOfView.saveImage(llMain,
+                    true,
+                    Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath(),
+                    "ABCDE",
+                    ScreenShotOfView.ImageType.PNG,
+                    new ScreenShotOfView.ImageSaveCallback() {
+                        @Override
+                        public void FilePath(String path, Uri uri) {
+
+                            Log.e(TAG, "ABCDE " + path);
+                        }
+
+                        @Override
+                        public void Error(IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+            );
+        }, 1000);*/
+
+//        Log.e(TAG, "getDeviceType " + DeviceTypeChecker.getDeviceType());
+
+
+        /*Call<APIResponseModel> call = APIClient.getClient("https://reqres.in/api/").create(APIInterface.class)
+                .doGetUserList("1");
+        RetrofitClient.callApi(call, new ApiResponse() {
+            @Override
+            public <T> void onSuccess(Response<T> response) {
+                Log.e(TAG, "response " + new Gson().toJson(response.body()));
+            }
+
+            @Override
+            public void responseNotSuccess(ResponseBody body) {
+                Log.e(TAG, "responseNotSuccess " + new Gson().toJson(body));
+            }
+
+            @Override
+            public <T> void onFailure(Call<T> call, Throwable t) {
+                Log.e(TAG, "onFailure " + t.getLocalizedMessage());
+            }
+
+            @Override
+            public void networkNotAvailable() {
+                Log.e(TAG, "networkNotAvailable " );
+            }
+        });*/
     }
 }

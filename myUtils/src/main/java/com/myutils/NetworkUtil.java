@@ -46,7 +46,7 @@ public class NetworkUtil {
     }
 
     public static String getConnectionStatusString() {
-        int connectionStatus = NetworkUtil.getConnectionStatus();
+        int connectionStatus = getConnectionStatus();
         if (connectionStatus == NetworkUtil.WIFI)
             return "Connected to Wifi";
         if (connectionStatus == NetworkUtil.MOBILE)

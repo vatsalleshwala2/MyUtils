@@ -51,6 +51,9 @@ dependencies {
     implementation ("com.intuit.sdp:sdp-android:1.1.0")
     //Gson
     implementation ("com.google.code.gson:gson:2.10.1")
+    //retrofit
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.10")
 
 }
 
@@ -61,7 +64,7 @@ publishing {
         register<MavenPublication> ("release") {
             groupId = "com.github.vatsalleshwala2"
             artifactId = "MyUtils"
-            version = "1.4.4"
+            version = "1.4.5"
 
             afterEvaluate {
                 from(components["release"])

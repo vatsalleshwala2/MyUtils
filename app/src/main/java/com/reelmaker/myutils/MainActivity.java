@@ -3,10 +3,7 @@ package com.reelmaker.myutils;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
-import android.os.Handler;
 import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,20 +11,15 @@ import androidx.appcompat.widget.LinearLayoutCompat;
 
 import com.google.android.material.textview.MaterialTextView;
 import com.google.gson.Gson;
-import com.myutils.DeviceTypeChecker;
 import com.myutils.DialogUtils;
 import com.myutils.NetworkUtil;
-import com.myutils.SPUtilsStatic;
-import com.myutils.ScreenShotOfView;
 import com.myutils.ToastUtils;
 import com.myutils.api.APIClient;
 import com.myutils.api.ApiResponse;
 import com.myutils.api.RetrofitClient;
 import com.myutils.dialog.SpotsDialog;
-import com.reelmaker.myutils.model.APIResponseModel;
-import com.reelmaker.myutils.model.Model;
+import com.reelmaker.myutils.model.PostsModel;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 import okhttp3.ResponseBody;
@@ -185,12 +177,13 @@ public class MainActivity extends AppCompatActivity{
 //        Log.e(TAG, "getDeviceType " + DeviceTypeChecker.getDeviceType());
 
 
-        /*Call<APIResponseModel> call = APIClient.getClient("https://reqres.in/api/").create(APIInterface.class)
-                .doGetUserList("1");
-        RetrofitClient.callApi(call, new ApiResponse() {
+        /*Call<ArrayList<PostsModel>> call = APIClient.getClient("https://jsonplaceholder.typicode.com/").create(APIInterface.class)
+                .getPosts();
+        RetrofitClient.callApi(call, new ApiResponse<>() {
             @Override
-            public <T> void onSuccess(Response<T> response) {
-                Log.e(TAG, "response " + new Gson().toJson(response.body()));
+            public void onSuccess(Response<ArrayList<PostsModel>> response) {
+                ArrayList<PostsModel> arrayList = response.body();
+                Log.e(TAG, "response " + new Gson().toJson(arrayList));
             }
 
             @Override
@@ -199,7 +192,7 @@ public class MainActivity extends AppCompatActivity{
             }
 
             @Override
-            public <T> void onFailure(Call<T> call, Throwable t) {
+            public void onFailure(Call<ArrayList<PostsModel>> call, Throwable t) {
                 Log.e(TAG, "onFailure " + t.getLocalizedMessage());
             }
 

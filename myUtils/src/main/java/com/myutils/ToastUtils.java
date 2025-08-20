@@ -35,7 +35,7 @@ public class ToastUtils {
     private static MaterialTextView lblToastSuccess, lblToastError, lblToastInfo, lblWarning;
 
     private void setToastSuccess() {
-        View view = inflater.inflate(R.layout.toast_layout_success, null);
+        View view = inflater.inflate(R.layout.toast_success, null);
         lblToastSuccess = view.findViewById(R.id.lblToast);
         lblToastSuccess.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         toastSuccess = new Toast(context.getApplicationContext());
@@ -52,7 +52,7 @@ public class ToastUtils {
     }
 
     private void setErrorToast() {
-        View view = inflater.inflate(R.layout.toast_layout_error, null);
+        View view = inflater.inflate(R.layout.toast_error, null);
         lblToastError = view.findViewById(R.id.lblToast);
         lblToastError.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         toastError = new Toast(context);
@@ -69,7 +69,7 @@ public class ToastUtils {
     }
 
     private void setToastInfo() {
-        View view = inflater.inflate(R.layout.toast_layout_info, null);
+        View view = inflater.inflate(R.layout.toast_info, null);
         lblToastInfo = view.findViewById(R.id.lblToast);
         lblToastInfo.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         toastInfo = new Toast(context.getApplicationContext());
@@ -86,7 +86,7 @@ public class ToastUtils {
     }
 
     private void setToastWarning() {
-        View view = inflater.inflate(R.layout.toast_layout_warning, null);
+        View view = inflater.inflate(R.layout.toast_warning, null);
         lblWarning = view.findViewById(R.id.lblToast);
         lblWarning.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         toastWarning = new Toast(context.getApplicationContext());

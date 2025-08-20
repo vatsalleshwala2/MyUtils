@@ -12,7 +12,7 @@ public class APIClient {
     public static Retrofit getClient(String baseURL) {
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
+//        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
 
         OkHttpClient okHttpClient = new OkHttpClient().newBuilder()
                 .connectTimeout(90, TimeUnit.SECONDS)

@@ -127,7 +127,7 @@ public class MyApplication extends Application {
 ```
 
 
-- Toast initialize
+- Dialog initialize
 
 ```
 public class MyApplication extends Application {

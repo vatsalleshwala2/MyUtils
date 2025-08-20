@@ -50,6 +50,18 @@ public class ToastUtils {
 
         }
     }
+    /** use only for app is killed */
+    public static void showToastSuccess(Context context, String msg) {
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View view = inflater.inflate(R.layout.toast_success, null);
+        MaterialTextView lblToastSuccess = view.findViewById(R.id.lblToast);
+        lblToastSuccess.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+        Toast toastSuccess = new Toast(context.getApplicationContext());
+        toastSuccess.setDuration(Toast.LENGTH_SHORT);
+        toastSuccess.setView(view);
+        lblToastSuccess.setText(msg);
+        toastSuccess.show();
+    }
 
     private void setErrorToast() {
         View view = inflater.inflate(R.layout.toast_error, null);
@@ -66,6 +78,18 @@ public class ToastUtils {
         } catch (Exception ignored) {
 
         }
+    }
+    /** use only for app is killed */
+    public static void showToastError(Context context, String msg) {
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View view = inflater.inflate(R.layout.toast_error, null);
+        MaterialTextView lblToastError = view.findViewById(R.id.lblToast);
+        lblToastError.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+        Toast toastError = new Toast(context);
+        toastError.setDuration(Toast.LENGTH_LONG);
+        toastError.setView(view);
+        lblToastError.setText(msg);
+        toastError.show();
     }
 
     private void setToastInfo() {
@@ -84,6 +108,18 @@ public class ToastUtils {
 
         }
     }
+    /** use only for app is killed */
+    public static void showToastInfo(Context context, String msg) {
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View view = inflater.inflate(R.layout.toast_info, null);
+        MaterialTextView lblToastInfo = view.findViewById(R.id.lblToast);
+        lblToastInfo.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+        Toast toastInfo = new Toast(context.getApplicationContext());
+        toastInfo.setDuration(Toast.LENGTH_SHORT);
+        toastInfo.setView(view);
+        lblToastInfo.setText(msg);
+        toastInfo.show();
+    }
 
     private void setToastWarning() {
         View view = inflater.inflate(R.layout.toast_warning, null);
@@ -100,6 +136,19 @@ public class ToastUtils {
         } catch (Exception ignored) {
 
         }
+    }
+
+    /** use only for app is killed */
+    public static void showToastWarning(Context context, String msg) {
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View view = inflater.inflate(R.layout.toast_warning, null);
+        MaterialTextView lblWarning = view.findViewById(R.id.lblToast);
+        lblWarning.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+        Toast toastWarning = new Toast(context.getApplicationContext());
+        toastWarning.setDuration(Toast.LENGTH_SHORT);
+        toastWarning.setView(view);
+        lblWarning.setText(msg);
+        toastWarning.show();
     }
 
 }
